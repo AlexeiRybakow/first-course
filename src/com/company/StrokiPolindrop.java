@@ -19,8 +19,8 @@ public class StrokiPolindrop {
         boolean palindrom = true;
 
         while (end > start) {
-            if (s.charAt(start) == ' ') start++;
-            if (s.charAt(end) == ' ') end--;
+            while (s.charAt(start) == ' ') start++;
+            while (s.charAt(end) == ' ') end--;
             if (s.charAt(end) == s.charAt(start)) {
                 start++;
                 end--;
@@ -33,6 +33,5 @@ public class StrokiPolindrop {
         if ( palindrom) {
             System.out.println("Палиндром");
         }
-        System.out.println("asd");
     }
 }

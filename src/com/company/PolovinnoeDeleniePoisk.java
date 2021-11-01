@@ -8,6 +8,7 @@ public class PolovinnoeDeleniePoisk {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         Random random = new Random();
+
         //Сортировка простыми вставками
 
         System.out.println("Введите размер массива");
