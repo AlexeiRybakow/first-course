@@ -28,6 +28,10 @@ public class MasiveNumbers {
         String result = "";
         int ord = 0;
 
+        if (numb == 0 ) {
+            System.out.println("zero");
+        }
+
         while (numb > 0) {
 
             int a = numb % 1000;
@@ -36,6 +40,7 @@ public class MasiveNumbers {
             int ten = c % 10;
             int hundr = c / 10;
             numb = numb / 1000;
+
 
 
                 if (ten == 1) {
