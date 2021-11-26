@@ -38,13 +38,27 @@ public class MasiveNumbers {
             numb = numb / 1000;
 
 
-                if (ten == 1) {
-                    result = ones[hundr] + teens[units] + orders[ord] + result;
-                } else result = ones[hundr] + tens[ten] + ones[units] + orders[ord] + result;
+            if (ten == 1) {
+                result = ones[hundr] + hundred + " " + teens[units] + " " + orders[ord] + " " + result;
+            }
+            else if (hundr == 0 && ten == 0 && units == 0 ) {
+                result = "";
+            }
+            else if (hundr == 0 && ten != 0 && units != 0) {
+                result = tens[ten] + " " + ones[units] + " " + orders[ord] + " " + result;
+            }
+            else if (hundr == 1 && ten == 0 && units == 0) {
+                result = ones[hundr] + " " +  hundred + " " + orders[ord] + " " + result;
+            }
+            else if (hundr == 0 && ten == 0 && units != 0) {
+                result = ones[units] + " " + orders[ord] + " " + result;
+            }
+            else result = ones[hundr] + " " +  hundred + " " + tens[ten] + " " + ones[units] + " " + orders[ord] + " " + result;
                 ord++;
             }
             System.out.println(result);
             System.out.println(ord);
+
 
         }
 
