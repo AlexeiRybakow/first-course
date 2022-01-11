@@ -37,6 +37,10 @@ public class MasiveNumbers {
             numb = -numb;
         }
 
+        if (numb == 0 ) {
+            System.out.println("zero");
+        }
+
         while (numb > 0) {
 
             int a = numb % 1000;
@@ -47,6 +51,7 @@ public class MasiveNumbers {
             numb = numb / 1000;
 
 
+<<<<<<< HEAD
             if (hundr >= 1 && ten == 1 ) {
                 result = ones[hundr] + " " +  hundred + " " + teens[units] + " " + orders[ord] + " " + result;
             }
@@ -70,6 +75,12 @@ public class MasiveNumbers {
                 result = ones[hundr] + " " +  hundred + " " +  ones[units] + " " + orders[ord] + " " + result;
             }
             else result = ones[hundr] + " " +  hundred + " " + tens[ten] + " " + ones[units] + " " + orders[ord] + " " + result;
+=======
+
+                if (ten == 1) {
+                    result = ones[hundr] + teens[units] + orders[ord] + result;
+                } else result = ones[hundr] + tens[ten] + ones[units] + orders[ord] + result;
+>>>>>>> f96d96d4192c0997f40419d3a5c7e7c480dff49e
                 ord++;
             }
 
