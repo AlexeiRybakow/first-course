@@ -27,6 +27,15 @@ public class MasiveNumbers {
         int numb = scanner.nextInt();
         String result = "";
         int ord = 0;
+        if ( numb == 0) {
+            System.out.println("Zero");
+        }
+
+        boolean minus = false;
+        if ( numb < 0) {
+            minus = true;
+            numb = -numb;
+        }
 
         while (numb > 0) {
 
@@ -38,11 +47,15 @@ public class MasiveNumbers {
             numb = numb / 1000;
 
 
-            if (ten == 1) {
-                result = ones[hundr] + hundred + " " + teens[units] + " " + orders[ord] + " " + result;
+            if (hundr >= 1 && ten == 1 ) {
+                result = ones[hundr] + " " +  hundred + " " + teens[units] + " " + orders[ord] + " " + result;
             }
+            else if (ten == 1) {
+                result =  teens[units] + " " + orders[ord] + " " + result;
+            }
+
             else if (hundr == 0 && ten == 0 && units == 0 ) {
-                result = "";
+                result = "" + result;
             }
             else if (hundr == 0 && ten != 0 && units != 0) {
                 result = tens[ten] + " " + ones[units] + " " + orders[ord] + " " + result;
@@ -53,12 +66,18 @@ public class MasiveNumbers {
             else if (hundr == 0 && ten == 0 && units != 0) {
                 result = ones[units] + " " + orders[ord] + " " + result;
             }
+            else if (hundr >= 1 && ten == 0 && units != 0) {
+                result = ones[hundr] + " " +  hundred + " " +  ones[units] + " " + orders[ord] + " " + result;
+            }
             else result = ones[hundr] + " " +  hundred + " " + tens[ten] + " " + ones[units] + " " + orders[ord] + " " + result;
                 ord++;
             }
+
+            if (minus) {
+                System.out.print("minus ");
+            }
             System.out.println(result);
             System.out.println(ord);
-
 
         }
 
